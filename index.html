@@ -3,79 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servicio Teknico | San Clemente</title>
-
+    <title>FreddyFix | Servicio técnico en San Clemente</title>
+    <meta name="description" content="Servicio técnico de computadores, notebooks, PCs y consolas en San Clemente. Diagnóstico gratis, mantención, armado de PC y atención por WhatsApp.">
+    <meta property="og:title" content="FreddyFix | Servicio técnico en San Clemente">
+    <meta property="og:description" content="Computadores lentos, notebooks que se calientan, PCs con polvo y consolas ruidosas. Diagnóstico gratis y atención por WhatsApp.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imagenes/Mantenimiento_pc.jpg">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
-
-    <meta property="og:title" content="Servicio Teknico | San Clemente">
-    <meta property="og:description" content="Mantenimiento, optimización y armado de equipos en San Clemente">
-    <meta property="og:url" content="https://freddymvs.github.io/Servicio-Teknico/">
 </head>
 <body>
-    
-<header class="header">
-        
-        <h1>Servicio Teknico</h1>
-        
-        <!-- Agrupamos el subtítulo y el texto splash -->
-        <div style="position: relative; display: inline-block; margin-bottom: 1.5rem;">
-            <p style="margin-bottom: 0;">Mantenimiento, optimización y armado de equipos</p>
-            <span class="minecraft-splash">¡ahora también a consolas!</span>
+<a class="skip-link" href="#servicios">Saltar a servicios</a>
+
+<header class="site-header">
+    <div class="container">
+        <nav class="nav" aria-label="Navegación principal">
+            <a class="logo" href="index.html" aria-label="FreddyFix inicio">
+                <span class="logo-mark">FF</span>
+                <span class="logo-text">
+                    <span>Freddy</span>
+                    <span>Fix</span>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#como-funciona">Cómo funciona</a>
+                <a href="#trabajos-resenas">Reseñas</a>
+                <a href="#preguntas">Preguntas</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>¿Tu computador está lento, se calienta o hace mucho ruido?</h1>
+                <p>
+                    Servicio técnico de notebooks, PCs y consolas en San Clemente.
+                    Te explico el problema con palabras simples, reviso tu equipo y solo pagas si decides realizar el servicio.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn-primary" href="https://wa.me/56956856850?text=Hola%20Freddy%2C%20quiero%20consultar%20por%20un%20servicio%20t%C3%A9cnico." target="_blank" rel="noopener">
+                        📱 Hablar por WhatsApp
+                    </a>
+                    <a class="btn-secondary" href="#servicios">Ver servicios y precios</a>
+                </div>
+
+                <ul class="trust-list" aria-label="Beneficios principales">
+                    <li>📍 San Clemente, Maule</li>
+                    <li>✅ Diagnóstico gratis</li>
+                    <li>💳 Pago de mano de obra al finalizar</li>
+                    <li>🧾 Evidencia del equipo probado</li>
+                </ul>
+            </div>
+
+            <aside class="hero-card" aria-label="Resumen del servicio">
+                <img src="imagenes/Mantenimiento_pc.jpg" alt="Mantenimiento de computador de escritorio">
+                <p class="mini-title">Atención clara, rápida y sin tecnicismos.</p>
+                <p class="mini-text">Ideal para estudiantes, gamers, familias y adultos mayores que necesitan ayuda confiable con su equipo.</p>
+            </aside>
+        </section>
+    </div>
+</header>
+
+<main id="contenido">
+    <section class="section" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Servicios principales</h2>
+            <p class="section-lead">
+                Elige el servicio que más se parece a tu problema. Si no sabes cuál corresponde, escríbeme y te oriento por WhatsApp.
+            </p>
+
+            <div class="catalog">
+                <a href="mantenimiento-notebooks.html" class="card">
+                    <img src="imagenes/reparacion_laptop.webp" alt="Notebook en reparación">
+                    <h3>Mantenimiento de notebooks</h3>
+                    <p>Limpieza interna, cambio de pasta térmica y revisión para equipos que se calientan o hacen ruido.</p>
+                    <span class="price">Desde $25.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
+                </a>
+
+                <a href="mantenimiento-pc-escritorio.html" class="card">
+                    <img src="imagenes/Mantenimiento_pc.jpg" alt="Computador de escritorio en mantenimiento">
+                    <h3>Mantenimiento de PC escritorio</h3>
+                    <p>Limpieza profunda, orden interno, cambio de pasta térmica y pruebas de temperatura.</p>
+                    <span class="price">Desde $30.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
+                </a>
+
+                <a href="armado-pc.html" class="card">
+                    <img src="imagenes/Pc_escrtorio.png" alt="Computador armado a medida">
+                    <h3>Armado de PC a medida</h3>
+                    <p>Ensamblaje, orden de cables, configuración inicial y optimización básica para dejarlo listo.</p>
+                    <span class="price">Desde $50.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
+                </a>
+
+                <a href="consolas.html" class="card">
+                    <img src="imagenes/consolas.webp" alt="Consolas de videojuegos">
+                    <h3>Mantenimiento de consolas</h3>
+                    <p>Limpieza, cambio de pasta térmica, revisión de ruido, temperatura y configuración de software.</p>
+                    <span class="price">Desde $30.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
+                </a>
+            </div>
         </div>
-        
-        <br>
-
-        <span class="header-location">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.013 3.5-4.51 3.5-7.327a8 8 0 10-16 0c0 2.818 1.556 5.314 3.5 7.327a19.581 19.581 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-            </svg>
-            San Clemente, Maule
-        </span>
-    </header>
-
-    <main class="catalog">
-        <a href="mantenimiento-notebooks.html" class="card">
-            <h2>Mantenimiento de Notebooks</h2>
-            <img src="imagenes/reparacion_laptop.webp" alt="Mantenimiento Notebook" class="imagen-centro">
-            <p>Limpieza profunda, cambio de pasta térmica. También se puede solicitar aumento de RAM y mejora de SSD.</p>
-            <span class="btn">Ver detalles</span>
-        </a>
-
-        <a href="armado-pc.html" class="card">
-            <h2>Armado de PC a Medida</h2>
-            <img src="imagenes/Pc_escrtorio.png" alt="Armado de PC" class="imagen-centro">
-            <p>Ensamblaje , gestión de cables, configuración de BIOS y optimización de Windows.</p>
-            <span class="btn">Ver detalles</span>
-        </a>
-
-        <a href="mantenimiento-pc-escritorio.html" class="card">
-            <h2>Mantenimiento de PC de Escritorio</h2>
-            <img src="imagenes/Mantenimiento_pc.jpg" alt="Mantenimiento PC" class="imagen-centro">
-            <p>Eliminación de polvo, cambio de pasta térmica y pruebas de temperatura para evitar lentitud.</p>
-            <span class="btn">Ver detalles</span>
-        </a>
-        
-        <a href="consolas.html" class="card">
-            <h2>Mantenimiento y Desbloqueo de Consolas</h2>
-            <img src="imagenes/consolas.webp" alt="Mantenimiento Consolas" class="imagen-centro">
-            <p>Limpieza profunda para eliminar ruido, cambio de pasta térmica y configuración de software (desbloqueos y emuladores retro).</p>
-            <span class="btn">Ver detalles</span>
-        </a>
-    </main>
-
-    <section class="important-info">
-        <h2>Información Importante</h2>
-        <ul>
-            <li><strong>Atención y agendamiento:</strong> Al trabajar de forma particular y compaginar el taller con mis horarios académicos universitarios, la recepción y entrega de equipos se realiza previa coordinación. Te invito a consultarme por WhatsApp para agendar el horario que mejor nos acomode.</li>
-            <li><strong>Revisiones sin costo:</strong> El diagnóstico de tu equipo es completamente gratis. Solo pagas si decides realizar el mantenimiento o reparación.</li>
-            <li><strong>Gestión de componentes:</strong> Trabajo a pedido, no poseo bodega ni inventario físico. Si tu equipo requiere piezas nuevas, te informaré el valor y se solicitará el pago de los componentes por adelantado para gestionarlos.</li>
-            <li><strong>Método y momento de pago:</strong> Los pagos se realizan mediante transferencia bancaria. El cobro por servicio <strong>(mano de obra)</strong> se realiza únicamente al finalizar el trabajo, al momento de entregar evidencia de tu equipo listo y probado.</li>
-        </ul>
     </section>
-    
- </body>
-</html>
 
+    <section class="section" id="como-funciona">
+        <div class="container">
+            <h2 class="section-title">Cómo funciona</h2>
+            <p class="section-lead">Proceso simple para que cualquier persona pueda pedir ayuda sin confundirse.</p>
 
+            <div class="steps">
+                <article class="step">
+                    <span>1</span>
+                    <h3>Me escribes</h3>
+                    <p>Me cuentas qué problema tiene tu notebook, PC o consola.</p>
+                </article>
+                <article class="step">
+                    <span>2</span>
+                    <h3>Revisamos opciones</h3>
+                    <p>Te digo si parece mantención, formateo, repuesto o revisión presencial.</p>
+                </article>
+                <article class="step">
+                    <span>3</span>
+                    <h3>Diagnóstico gratis</h3>
+                    <p>Si el equipo requiere revisión, coordinamos un horario disponible.</p>
+                </article>
+                <article class="step">
+                    <span>4</span>
+                    <h3>Pagas al final</h3>
+                    <p>La mano de obra se paga cuando el equipo queda listo y probado.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="confianza">
+        <div class="container">
+            <div class="info-box">
+                <h2 class="section-title">Información importante</h2>
+                <ul>
+                    <li><strong>Atención con agenda:</strong> coordino recepción y entrega según disponibilidad, ya que trabajo de forma particular.</li>
+                    <li><strong>Diagnóstico gratis:</strong> revisar el problema no tiene costo. Solo pagas si aceptas realizar el trabajo.</li>
+                    <li><strong>Repuestos a pedido:</strong> si tu equipo necesita piezas, te aviso el valor antes de comprar cualquier componente.</li>
+                    <li><strong>Transparencia:</strong> entrego evidencia del equipo funcionando, limpio o probado según el servicio realizado.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+<section class="trabajos-resenas-section" id="trabajos-resenas">
+    <div class="section-header">
+        <h2>Trabajos realizados y reseñas</h2>
+        <p>
+            Aquí se muestran algunos equipos atendidos por FreddyFix, con una breve descripción del trabajo realizado y la opinión del cliente.
+        </p>
+    </div>
+
+    <div id="trabajos-resenas-container" class="trabajos-resenas-grid"></div>
+</section>
+
+    <section class="section" id="preguntas">
+        <div class="container">
+            <h2 class="section-title">Preguntas frecuentes</h2>
+            <div class="faq">
+                <details>
+                    <summary>¿El diagnóstico realmente es gratis?</summary>
+                    <p>Sí. Revisar el problema no tiene costo. Solo pagas si decides realizar el servicio.</p>
+                </details>
+                <details>
+                    <summary>¿Atiendes fuera de San Clemente?</summary>
+                    <p>Principalmente atiendo en San Clemente, pero puedes consultar por WhatsApp para revisar disponibilidad.</p>
+                </details>
+                <details>
+                    <summary>¿Debo comprar yo los repuestos?</summary>
+                    <p>Puede ser de las dos formas. Si prefieres que yo gestione la compra, primero te informo el valor y se paga el componente por adelantado.</p>
+                </details>
+                <details>
+                    <summary>¿También ayudas a personas que no saben de computadores?</summary>
+                    <p>Sí. La idea es explicar todo con palabras simples y ayudarte a tomar una buena decisión sin tecnicismos.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="final-cta">
+            <h2>¿No sabes qué servicio necesitas?</h2>
+            <p>Envíame una foto o cuéntame el problema por WhatsApp y te oriento.</p>
+            <a class="btn-primary" href="https://wa.me/56956856850?text=Hola%20Freddy%2C%20no%20s%C3%A9%20qu%C3%A9%20servicio%20necesito.%20%C2%BFMe%20puedes%20orientar%3F" target="_blank" rel="noopener">
+                📱 Consultar ahora
+            </a>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>FreddyFix · Servicio técnico en San Clemente, Maule</p>
+</footer>
+<script src="comentarios.js"></script>
 </body>
 </html>
