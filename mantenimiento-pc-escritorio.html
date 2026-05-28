@@ -5,20 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mantenimiento de PC de escritorio | FreddyFix</title>
     <meta name="description" content="Mantenimiento de PC de escritorio en San Clemente. Diagnóstico gratis y atención por WhatsApp.">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css?v=4">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar modo">
+        🌙
+    </button>
+
     <script>
-    const themeToggle = document.getElementById("theme-toggle");
-    const savedTheme = localStorage.getItem("freddyfix-theme");
+        if (location.hostname === "freddyfix.cl") {
+            location.replace("https://www.freddyfix.cl" + location.pathname + location.search + location.hash);
+        }
 
-    if (savedTheme === "dark") {
-        document.body.classList.add("dark-mode");
-        if (themeToggle) themeToggle.textContent = "☀️";
-    }
+        const themeToggle = document.getElementById("theme-toggle");
+        const savedTheme = localStorage.getItem("freddyfix-theme");
 
-    if (themeToggle) {
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+            themeToggle.textContent = "☀️";
+        }
+
         themeToggle.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
 
@@ -27,15 +34,14 @@
             localStorage.setItem("freddyfix-theme", isDark ? "dark" : "light");
             themeToggle.textContent = isDark ? "☀️" : "🌙";
         });
-    }
-</script>
+    </script>
 <main class="detail-wrapper">
-    <a href="index.html#servicios" class="detail-back">← Volver a servicios</a>
+    <a href="/index.html#servicios" class="detail-back">← Volver a servicios</a>
 
     <h1>Mantenimiento de PC de escritorio</h1>
     <p class="detail-intro">Recomendado si tu PC tiene polvo, suena fuerte, sube mucho la temperatura o ha perdido rendimiento en juegos y programas.</p>
 
-    <img class="detail-image" src="imagenes/Mantenimiento_pc.jpg" alt="Mantenimiento de PC de escritorio">
+    <img class="detail-image" src="/imagenes/Mantenimiento_pc.jpg">>
 
     <h2>¿Qué incluye?</h2>
     <ul class="service-list">
