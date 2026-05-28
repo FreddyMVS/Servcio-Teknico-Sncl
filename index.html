@@ -1,279 +1,231 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <script>
-        const dominioNuevo = "www.freddyfix.cl";
-
-        if (window.location.hostname !== dominioNuevo) {
-            window.location.replace("https://www.freddyfix.cl/");
-        }
-    </script>
-
-    <link rel="canonical" href="https://www.freddyfix.cl/">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreddyFix | Servicio técnico de computadores en San Clemente</title>
-
+    <title>FreddyFix | Servicio técnico en San Clemente</title>
     <meta name="description" content="Servicio técnico de computadores, notebooks, PCs y consolas en San Clemente. Diagnóstico gratis, mantención, armado de PC y atención por WhatsApp.">
     <meta property="og:title" content="FreddyFix | Servicio técnico en San Clemente">
     <meta property="og:description" content="Computadores lentos, notebooks que se calientan, PCs con polvo y consolas ruidosas. Diagnóstico gratis y atención por WhatsApp.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="imagenes/Mantenimiento_pc.jpg">
-
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <a class="skip-link" href="#servicios">Saltar a servicios</a>
+<a class="skip-link" href="#servicios">Saltar a servicios</a>
 
-    <header class="site-header">
+<header class="site-header">
+    <div class="container">
+        <nav class="nav" aria-label="Navegación principal">
+            <a class="logo" href="index.html" aria-label="FreddyFix inicio">
+                <span class="logo-mark">FF</span>
+                <span class="logo-text">
+                    <span>Freddy</span>
+                    <span>Fix</span>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#como-funciona">Cómo funciona</a>
+                <a href="#trabajos-resenas">Reseñas</a>
+                <a href="#preguntas">Preguntas</a>
+            </div>
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar modo oscuro">
+                🌙
+            </button>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>¿Tu computador está lento, se calienta o hace mucho ruido?</h1>
+                <p>
+                    Servicio técnico de notebooks, PCs y consolas en San Clemente.
+                    Te explico el problema con palabras simples, reviso tu equipo y solo pagas si decides realizar el servicio.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="btn-primary" href="https://wa.me/56956856850?text=Hola%20Freddy%2C%20quiero%20consultar%20por%20un%20servicio%20t%C3%A9cnico." target="_blank" rel="noopener">
+                        📱 Hablar por WhatsApp
+                    </a>
+                    <a class="btn-secondary" href="#servicios">Ver servicios y precios</a>
+                </div>
+
+                <ul class="trust-list" aria-label="Beneficios principales">
+                    <li>📍 San Clemente, Maule</li>
+                    <li>✅ Diagnóstico gratis</li>
+                    <li>💳 Pago de mano de obra al finalizar</li>
+                    <li>🧾 Evidencia del equipo probado</li>
+                </ul>
+            </div>
+
+            <aside class="hero-card" aria-label="Resumen del servicio">
+                <img src="imagenes/lalmch-computer-767781_1920.jpg" alt="Mantenimiento de computador de escritorio">
+                <p class="mini-title">Atención clara, rápida y sin tecnicismos.</p>
+                <p class="mini-text">Ideal para estudiantes, gamers, familias y adultos mayores que necesitan ayuda confiable con su equipo.</p>
+            </aside>
+        </section>
+    </div>
+</header>
+
+<main id="contenido">
+    <section class="section" id="servicios">
         <div class="container">
-            <nav class="nav">
-                <a href="https://www.freddyfix.cl/" class="logo" aria-label="Inicio FreddyFix">
-                    <span class="logo-mark">FF</span>
-                    <span class="logo-text">
-                        <span>Freddy</span>
-                        <span>Fix</span>
-                    </span>
+            <h2 class="section-title">Servicios principales</h2>
+            <p class="section-lead">
+                Elige el servicio que más se parece a tu problema. Si no sabes cuál corresponde, escríbeme y te oriento por WhatsApp.
+            </p>
+
+            <div class="catalog">
+                <a href="mantenimiento-notebooks.html" class="card">
+                    <img src="imagenes/reparacion_laptop.webp" alt="Notebook en reparación">
+                    <h3>Mantenimiento de notebooks</h3>
+                    <p>Limpieza interna, cambio de pasta térmica y revisión para equipos que se calientan o hacen ruido.</p>
+                    <span class="price">Desde $25.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
                 </a>
 
-                <div class="nav-links">
-                    <a href="#servicios">Servicios</a>
-                    <a href="#como-funciona">Cómo funciona</a>
-                    <a href="#trabajos-resenas">Reseñas</a>
-                    <a href="#preguntas">Preguntas</a>
-                </div>
+                <a href="mantenimiento-pc-escritorio.html" class="card">
+                    <img src="imagenes/Mantenimiento_pc.jpg" alt="Computador de escritorio en mantenimiento">
+                    <h3>Mantenimiento de PC escritorio</h3>
+                    <p>Limpieza profunda, orden interno, cambio de pasta térmica y pruebas de temperatura.</p>
+                    <span class="price">Desde $30.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
+                </a>
 
-                <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar modo oscuro">
-                    🌙
-                </button>
-            </nav>
+                <a href="armado-pc.html" class="card">
+                    <img src="imagenes/Pc_escrtorio.png" alt="Computador armado a medida">
+                    <h3>Armado de PC a medida</h3>
+                    <p>Ensamblaje, orden de cables, configuración inicial y optimización básica para dejarlo listo.</p>
+                    <span class="price">Desde $50.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
+                </a>
 
-            <section class="hero">
-                <div class="hero-content">
-                    <h1>Servicio técnico confiable para computadores, notebooks, PCs y consolas.</h1>
-                    <p>
-                        Atención en San Clemente, Maule. Diagnóstico claro, mantención, limpieza,
-                        formateo, armado de PC y revisión de equipos con problemas de temperatura o lentitud.
-                    </p>
-
-                    <div class="hero-actions">
-                        <a class="btn-primary" href="https://wa.me/56956856850" target="_blank" rel="noopener">
-                            Cotizar por WhatsApp
-                        </a>
-                        <a class="btn-secondary" href="#servicios">
-                            Ver servicios
-                        </a>
-                    </div>
-
-                    <ul class="trust-list">
-                        <li>Diagnóstico claro</li>
-                        <li>Atención cercana</li>
-                        <li>Soporte en San Clemente</li>
-                    </ul>
-                </div>
-
-                <div class="hero-card">
-                    <img src="imagenes/lalmch-computer-767781_1920.jpg" alt="Servicio técnico FreddyFix">
-                    <p class="mini-title">Atención clara, rápida y sin tecnicismos.</p>
-                    <p class="mini-text">
-                        Ideal para estudiantes, gamers, familias y adultos mayores que necesitan ayuda confiable con su equipo.
-                    </p>
-                </div>
-            </section>
+                <a href="consolas.html" class="card">
+                    <img src="imagenes/consolas.webp" alt="Consolas de videojuegos">
+                    <h3>Mantenimiento de consolas</h3>
+                    <p>Limpieza, cambio de pasta térmica, revisión de ruido, temperatura y configuración de software.</p>
+                    <span class="price">Desde $30.000 CLP</span>
+                    <span class="card-link">Ver detalles →</span>
+                </a>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main id="contenido">
-        <section class="section" id="servicios">
-            <div class="container">
-                <h2 class="section-title">Servicios FreddyFix</h2>
-                <p class="section-lead">
-                    Soluciones para computadores lentos, notebooks con sobrecalentamiento,
-                    PCs gamer, consolas ruidosas y equipos que necesitan mantenimiento.
-                </p>
+    <section class="section" id="como-funciona">
+        <div class="container">
+            <h2 class="section-title">Cómo funciona</h2>
+            <p class="section-lead">Proceso simple para que cualquier persona pueda pedir ayuda sin confundirse.</p>
 
-                <div class="catalog">
-                    <article class="card">
-                        <img src="imagenes/trabajos/Mantenimiento_pc.jpg" alt="Mantenimiento de PC">
-                        <h3>Mantenimiento de PC</h3>
-                        <p>Limpieza interna, revisión de ventilación, cambio de pasta térmica y prueba de temperaturas.</p>
-                        <span class="price">Desde $15.000</span>
-                        <span class="card-link">Consultar servicio</span>
-                    </article>
-
-                    <article class="card">
-                        <img src="imagenes/trabajos/reparacion_laptop.webp" alt="Mantenimiento de notebook">
-                        <h3>Mantenimiento de notebook</h3>
-                        <p>Limpieza interna, revisión de temperatura, optimización básica y diagnóstico del sistema.</p>
-                        <span class="price">Desde $18.000</span>
-                        <span class="card-link">Consultar servicio</span>
-                    </article>
-
-                    <article class="card">
-                        <img src="imagenes/trabajos/Pc_escritorio.png" alt="Armado de PC">
-                        <h3>Armado de PC</h3>
-                        <p>Armado personalizado, orden de cables, instalación de sistema operativo, drivers y pruebas.</p>
-                        <span class="price">Desde $25.000</span>
-                        <span class="card-link">Consultar servicio</span>
-                    </article>
-
-                    <article class="card">
-                        <img src="imagenes/trabajos/consolas.webp" alt="Servicio técnico de consolas">
-                        <h3>Consolas</h3>
-                        <p>Limpieza, revisión de temperatura, mantención preventiva y diagnóstico de problemas comunes.</p>
-                        <span class="price">Consultar</span>
-                        <span class="card-link">Consultar servicio</span>
-                    </article>
-                </div>
+            <div class="steps">
+                <article class="step">
+                    <span>1</span>
+                    <h3>Me escribes</h3>
+                    <p>Me cuentas qué problema tiene tu notebook, PC o consola.</p>
+                </article>
+                <article class="step">
+                    <span>2</span>
+                    <h3>Revisamos opciones</h3>
+                    <p>Te digo si parece mantención, formateo, repuesto o revisión presencial.</p>
+                </article>
+                <article class="step">
+                    <span>3</span>
+                    <h3>Diagnóstico gratis</h3>
+                    <p>Si el equipo requiere revisión, coordinamos un horario disponible.</p>
+                </article>
+                <article class="step">
+                    <span>4</span>
+                    <h3>Pagas al final</h3>
+                    <p>La mano de obra se paga cuando el equipo queda listo y probado.</p>
+                </article>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section" id="como-funciona">
-            <div class="container">
-                <h2 class="section-title">Cómo funciona</h2>
-                <p class="section-lead">
-                    Un proceso simple para que sepas qué se hará con tu equipo antes de realizar cualquier trabajo.
-                </p>
-
-                <div class="steps">
-                    <article class="step">
-                        <span>1</span>
-                        <h3>Me contactas</h3>
-                        <p>Me escribes por WhatsApp y me cuentas qué problema tiene tu equipo.</p>
-                    </article>
-
-                    <article class="step">
-                        <span>2</span>
-                        <h3>Reviso el caso</h3>
-                        <p>Te indico qué podría estar fallando y qué revisión conviene realizar.</p>
-                    </article>
-
-                    <article class="step">
-                        <span>3</span>
-                        <h3>Confirmamos el trabajo</h3>
-                        <p>Te informo el valor antes de realizar el servicio o comprar algún repuesto.</p>
-                    </article>
-
-                    <article class="step">
-                        <span>4</span>
-                        <h3>Entrego el equipo</h3>
-                        <p>Te explico qué se hizo y cómo cuidar mejor tu computador o consola.</p>
-                    </article>
-                </div>
+    <section class="section" id="confianza">
+        <div class="container">
+            <div class="info-box">
+                <h2 class="section-title">Información importante</h2>
+                <ul>
+                    <li><strong>Atención con agenda:</strong> coordino recepción y entrega según disponibilidad, ya que trabajo de forma particular.</li>
+                    <li><strong>Diagnóstico gratis:</strong> revisar el problema no tiene costo. Solo pagas si aceptas realizar el trabajo.</li>
+                    <li><strong>Repuestos a pedido:</strong> si tu equipo necesita piezas, te aviso el valor antes de comprar cualquier componente.</li>
+                    <li><strong>Transparencia:</strong> entrego evidencia del equipo funcionando, limpio o probado según el servicio realizado.</li>
+                </ul>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="info-box">
-                    <h2 class="section-title">Por qué elegir FreddyFix</h2>
+<section class="trabajos-resenas-section" id="trabajos-resenas">
+    <div class="section-header">
+        <h2>Trabajos realizados y reseñas</h2>
+        <p>
+            Aquí se muestran algunos equipos atendidos por FreddyFix, con una breve descripción del trabajo realizado y la opinión del cliente.
+        </p>
+    </div>
 
-                    <ul>
-                        <li>Atención clara, sin palabras difíciles ni tecnicismos innecesarios.</li>
-                        <li>Ideal para gamers, estudiantes, familias y adultos mayores.</li>
-                        <li>Revisión honesta antes de realizar cambios o comprar repuestos.</li>
-                        <li>Servicio local en San Clemente, Maule.</li>
-                    </ul>
-                </div>
+    <div id="trabajos-resenas-container" class="trabajos-resenas-grid"></div>
+</section>
+
+    <section class="section" id="preguntas">
+        <div class="container">
+            <h2 class="section-title">Preguntas frecuentes</h2>
+            <div class="faq">
+                <details>
+                    <summary>¿El diagnóstico o revisión tiene algún costo?</summary>
+                    <p>¡El diagnóstico es sin costo! Primero reviso a fondo tu equipo para identificar la falla, te explico el problema con claridad y te propongo la solución más conveniente. Solo pagas la mano de obra si decides realizar la reparación o mantenimiento conmigo.</p>
+                </details>
+                <details>
+                    <summary>¿Dónde atiendes y en qué horario?</summary>
+                    <p>Trabajo desde mi taller particular ubicado en San Clemente. Debido a mis horarios académicos universitarios, la recepción y entrega de equipos se realiza de manera exclusiva mediante previa coordinación. Te invito a escribirme por WhatsApp para agendar el horario que mejor nos acomode.</p>
+                </details>
+                <details>
+                    <summary>¿Debo comprar yo los repuestos?</summary>
+                    <p>Para evitar problemas logísticos o errores en los componentes, es preferible que yo gestione la compra del repuesto. Primero te indicaré el costo exacto para que realices el pago por adelantado. De esta manera, la pieza llegará directo a mi taller y todo el proceso será mucho más rápido y seguro para ti.</p>
+                </details>
+                <details>
+                    <summary>¿También ayudas a personas que no saben de computadores?</summary>
+                    <p>Sí. La idea es explicar todo con palabras simples y ayudarte a tomar una buena decisión sin tecnicismos.</p>
+                </details>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section trabajos-resenas-section" id="trabajos-resenas">
-            <div class="container">
-                <h2 class="section-title">Trabajos realizados y reseñas</h2>
-                <p class="section-lead">
-                    Aquí se muestran algunos equipos atendidos por FreddyFix, con una breve descripción del trabajo realizado y la opinión del cliente.
-                </p>
+    <section class="container">
+        <div class="final-cta">
+            <h2>¿No sabes qué servicio necesitas?</h2>
+            <p>Envíame una foto o cuéntame el problema por WhatsApp y te oriento.</p>
+            <a class="btn-primary" href="https://wa.me/56956856850?text=Hola%20Freddy%2C%20no%20s%C3%A9%20qu%C3%A9%20servicio%20necesito.%20%C2%BFMe%20puedes%20orientar%3F" target="_blank" rel="noopener">
+                📱 Consultar ahora
+            </a>
+        </div>
+    </section>
+</main>
 
-                <div id="trabajos-resenas-container" class="trabajos-resenas-grid">
-                    <p class="sin-resenas">Cargando reseñas...</p>
-                </div>
-            </div>
-        </section>
+<footer class="footer">
+    <p>FreddyFix · Servicio técnico en San Clemente, Maule</p>
+</footer>
+<script src="comentarios.js"></script>
+<script>
+    const themeToggle = document.getElementById("theme-toggle");
+    const savedTheme = localStorage.getItem("freddyfix-theme");
 
-        <section class="section" id="preguntas">
-            <div class="container">
-                <h2 class="section-title">Preguntas frecuentes</h2>
-                <p class="section-lead">
-                    Algunas dudas comunes antes de solicitar un servicio técnico.
-                </p>
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-mode");
+        if (themeToggle) themeToggle.textContent = "☀️";
+    }
 
-                <div class="faq">
-                    <details>
-                        <summary>¿Debo comprar yo los repuestos?</summary>
-                        <p>
-                            Si prefieres que yo gestione la compra, primero te informaré el valor del producto
-                            para que realices el depósito. Luego compraré el repuesto para que llegue a mi domicilio
-                            y así evitar problemas con la obtención del componente.
-                        </p>
-                    </details>
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
 
-                    <details>
-                        <summary>¿Haces diagnóstico?</summary>
-                        <p>
-                            Sí. Primero se revisa el problema del equipo para explicar qué puede estar fallando
-                            y qué solución conviene aplicar.
-                        </p>
-                    </details>
+            const isDark = document.body.classList.contains("dark-mode");
 
-                    <details>
-                        <summary>¿Atiendes notebooks y PCs gamer?</summary>
-                        <p>
-                            Sí. Realizo mantención de notebooks, computadores de escritorio, PCs gamer y revisión de temperatura.
-                        </p>
-                    </details>
-
-                    <details>
-                        <summary>¿Dónde atiendes?</summary>
-                        <p>
-                            Principalmente en San Clemente, Maule. Puedes consultar disponibilidad por WhatsApp.
-                        </p>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="final-cta">
-                    <h2>¿Tu computador está lento, se calienta o necesita mantención?</h2>
-                    <p>Escríbeme y revisamos qué solución conviene para tu equipo.</p>
-                    <a class="cta-btn" href="https://wa.me/56956856850" target="_blank" rel="noopener">
-                        Contactar por WhatsApp
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>FreddyFix · Servicio técnico en San Clemente, Maule</p>
-    </footer>
-
-    <script src="comentarios.js"></script>
-
-    <script>
-        const themeToggle = document.getElementById("theme-toggle");
-        const savedTheme = localStorage.getItem("freddyfix-theme");
-
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark-mode");
-            if (themeToggle) themeToggle.textContent = "☀️";
-        }
-
-        if (themeToggle) {
-            themeToggle.addEventListener("click", () => {
-                document.body.classList.toggle("dark-mode");
-
-                const isDark = document.body.classList.contains("dark-mode");
-
-                localStorage.setItem("freddyfix-theme", isDark ? "dark" : "light");
-                themeToggle.textContent = isDark ? "☀️" : "🌙";
-            });
-        }
-    </script>
+            localStorage.setItem("freddyfix-theme", isDark ? "dark" : "light");
+            themeToggle.textContent = isDark ? "☀️" : "🌙";
+        });
+    }
+</script>
 </body>
 </html>
+
