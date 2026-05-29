@@ -934,3 +934,153 @@ body.dark-mode .trabajo-descripcion,
 body.dark-mode .sin-resenas {
     color: #b7c6d9;
 }
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.theme-toggle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(15, 23, 42, 0.85);
+  color: #facc15;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 768px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 54px;
+    height: 54px;
+    font-size: 26px;
+    z-index: 20;
+  }
+
+  .nav {
+    margin-top: 22px;
+    padding-right: 0;
+    gap: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+}
+/* Slider de imágenes estilo Instagram dentro de cada trabajo/reseña */
+.trabajo-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--surface-soft);
+}
+
+.trabajo-slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform .35s ease;
+}
+
+.trabajo-imagen-slider {
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, .65);
+    color: white;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+}
+
+.slider-prev {
+    left: 10px;
+}
+
+.slider-next {
+    right: 10px;
+}
+
+.slider-btn:hover {
+    background: rgba(15, 23, 42, .85);
+}
+
+.slider-dots {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border: none;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .55);
+    cursor: pointer;
+    padding: 0;
+}
+
+.slider-dot.active {
+    background: white;
+}
+
+body.dark-mode .slider-btn {
+    background: rgba(2, 6, 23, .75);
+}
+
+body.dark-mode .slider-btn:hover {
+    background: rgba(2, 6, 23, .95);
+}
