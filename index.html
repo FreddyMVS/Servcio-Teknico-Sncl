@@ -26,7 +26,9 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+
 <a class="skip-link" href="#servicios">Saltar a servicios</a>
 
 <header class="site-header">
@@ -156,19 +158,19 @@
         </div>
     </section>
 
-    <section class="section" id="confianza">
-        <div class="container">
-            <div class="info-box">
-                <h2 class="section-title">Información importante</h2>
-                <ul>
-                    <li><strong>Atención con agenda:</strong> coordino recepción y entrega según disponibilidad, ya que trabajo de forma particular.</li>
-                    <li><strong>Diagnóstico gratis:</strong> revisar el problema no tiene costo. Solo pagas si aceptas realizar el trabajo.</li>
-                    <li><strong>Repuestos a pedido:</strong> si tu equipo necesita piezas, te aviso el valor antes de comprar cualquier componente.</li>
-                    <li><strong>Transparencia:</strong> entrego evidencia del equipo funcionando, limpio o probado según el servicio realizado.</li>
-                </ul>
-            </div>
+<section class="section" id="confianza">
+    <div class="container">
+        <div class="info-box fade-up">
+            <h2 class="section-title">Información importante</h2>
+            <ul>
+                <li><strong>Atención con agenda:</strong> coordino recepción y entrega según disponibilidad, ya que trabajo de forma particular.</li>
+                <li><strong>Diagnóstico gratis:</strong> revisar el problema no tiene costo. Solo pagas si aceptas realizar el trabajo.</li>
+                <li><strong>Repuestos a pedido:</strong> si tu equipo necesita piezas, te aviso el valor antes de comprar cualquier componente.</li>
+                <li><strong>Transparencia:</strong> entrego evidencia del equipo funcionando, limpio o probado según el servicio realizado.</li>
+            </ul>
         </div>
-    </section>
+    </div>
+</section>
 
 <section class="trabajos-resenas-section" id="trabajos-resenas">
     <div class="section-header">
@@ -236,29 +238,38 @@
     </section>
 </main>
 
+</main>
+
 <section class="instagram-banner">
-    <div class="instagram-banner-content">
-        <div>
-            <span class="instagram-label">Instagram FreddyFix</span>
-            <h2>Sígueme para ver trabajos, mantenciones y consejos para cuidar tu equipo.</h2>
+    <a href="https://www.instagram.com/Freddy_mvs/" target="_blank" rel="noopener" class="instagram-banner-content" style="text-decoration: none; color: inherit; display: flex;">
+        
+        <div class="ig-profile">
+            <div class="ig-avatar-ring">
+                <img src="imagenes/tu_foto_de_perfil.jpeg" alt="freddy_mvs" class="ig-avatar">
+            </div>
+            
+            <div class="ig-info">
+                <div class="ig-header">
+                    <span class="instagram-label">freddy_mvs</span>
+                </div>
+                
+                <p class="ig-bio-real">
+                    Servicio Técnico de PC y Consolas 💻🎮<br>
+                    "𝔩𝔞 𝔡𝔦𝔰𝔱𝔞𝔫𝔠𝔦𝔞 𝔫𝔬 𝔢𝔰 𝔲𝔫 𝔭𝔯𝔬𝔟𝔩𝔢𝔪𝔞, 𝔢𝔩 𝔭𝔯𝔬𝔟𝔩𝔢𝔪𝔞 𝔰𝔬𝔪𝔬𝔰 𝔫𝔬𝔰𝔬𝔱𝔯𝔬𝔰 𝔩𝔬𝔰 𝔥𝔲𝔪𝔞𝔫𝔬𝔰..."
+                </p>
+            </div>
         </div>
 
-        <a 
-            class="instagram-btn" 
-            href="https://www.instagram.com/Freddy_mvs/" 
-            target="_blank" 
-            rel="noopener"
-        >
-            📷 Seguir en Instagram
-        </a>
-    </div>
+        <div class="instagram-btn">
+            📷 Seguir
+        </div>
+    </a>
 </section>
 
-<footer class="footer">
-    <p>FreddyFix · Servicio técnico en San Clemente, Maule</p>
-</footer>
 <script src="comentarios.js"></script>
+
 <script>
+    // --- LÓGICA DEL MODO OSCURO (ONDA DE EXPANSIÓN Y CONTRACCIÓN) ---
     const themeToggle = document.getElementById("theme-toggle");
     const savedTheme = localStorage.getItem("freddyfix-theme");
 
@@ -268,16 +279,181 @@
     }
 
     if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
+        themeToggle.addEventListener("click", (e) => {
+            const isCurrentlyDark = document.body.classList.contains("dark-mode");
+            const goingToDark = !isCurrentlyDark;
 
-            const isDark = document.body.classList.contains("dark-mode");
+            if (!document.startViewTransition) {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("freddyfix-theme", goingToDark ? "dark" : "light");
+                themeToggle.textContent = goingToDark ? "☀️" : "🌙";
+                return;
+            }
 
-            localStorage.setItem("freddyfix-theme", isDark ? "dark" : "light");
-            themeToggle.textContent = isDark ? "☀️" : "🌙";
+            const x = e.clientX || innerWidth / 2;
+            const y = e.clientY || innerHeight / 2;
+            const endRadius = Math.hypot(
+                Math.max(x, innerWidth - x),
+                Math.max(y, innerHeight - y)
+            );
+
+            if (!goingToDark) {
+                document.documentElement.classList.add("return-light");
+            }
+
+            const transition = document.startViewTransition(() => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("freddyfix-theme", goingToDark ? "dark" : "light");
+                themeToggle.textContent = goingToDark ? "☀️" : "🌙";
+            });
+
+            transition.ready.then(() => {
+                const clipPath = [
+                    `circle(0px at ${x}px ${y}px)`,
+                    `circle(${endRadius}px at ${x}px ${y}px)`
+                ];
+
+                document.documentElement.animate(
+                    {
+                        clipPath: goingToDark ? clipPath : [...clipPath].reverse()
+                    },
+                    {
+                        duration: 600,
+                        easing: "ease-in-out",
+                        pseudoElement: goingToDark
+                            ? "::view-transition-new(root)"
+                            : "::view-transition-old(root)"
+                    }
+                );
+            });
+
+            transition.finished.then(() => {
+                document.documentElement.classList.remove("return-light");
+            });
         });
     }
-    
+
+    // --- ANIMACIONES GENERALES AL HACER SCROLL ---
+    const elementosAnimados = document.querySelectorAll(
+        ".section, .card, .step, details, .final-cta, .instagram-banner-content"
+    );
+
+    elementosAnimados.forEach((elemento) => {
+        elemento.classList.add("fade-up");
+    });
+
+    const observerAnimaciones = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                entrada.target.classList.add("show");
+                observerAnimaciones.unobserve(entrada.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    elementosAnimados.forEach((elemento) => {
+        observerAnimaciones.observe(elemento);
+    });
+
+    // --- CASCADA REAL PARA INFORMACIÓN IMPORTANTE ---
+    const infoBoxes = document.querySelectorAll(".info-box");
+
+    const observerInfoBox = new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+                const caja = entrada.target;
+                const items = caja.querySelectorAll("li");
+
+                caja.classList.add("info-visible");
+
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.classList.add("info-item-visible");
+                    }, 200 + index * 180);
+                });
+
+                observerInfoBox.unobserve(caja);
+            }
+        });
+    }, {
+        threshold: 0.25
+    });
+
+    infoBoxes.forEach((caja) => {
+        observerInfoBox.observe(caja);
+    });
+</script>
+
+<script>
+    // --- EFECTO DE ESCRITURA AUTOMÁTICA PARA EL TÍTULO PRINCIPAL ---
+    document.addEventListener("DOMContentLoaded", () => {
+        const titulo = document.querySelector(".hero-content h1");
+
+        if (titulo) {
+            const texto = titulo.textContent;
+            titulo.textContent = "";
+            titulo.style.opacity = "1";
+
+            let i = 0;
+
+            function escribir() {
+                if (i < texto.length) {
+                    titulo.textContent += texto.charAt(i);
+                    i++;
+                    setTimeout(escribir, 45);
+                }
+            }
+
+            setTimeout(escribir, 300);
+        }
+    });
+</script>
+<script>
+    document.querySelectorAll(".faq details").forEach((detalle) => {
+        const summary = detalle.querySelector("summary");
+        const contenidoOriginal = Array.from(detalle.children).filter(
+            (child) => child.tagName.toLowerCase() !== "summary"
+        );
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "faq-content";
+
+        contenidoOriginal.forEach((elemento) => {
+            wrapper.appendChild(elemento);
+        });
+
+        detalle.appendChild(wrapper);
+
+        summary.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const estaAbierto = detalle.classList.contains("faq-open");
+
+            if (estaAbierto) {
+                wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+
+                requestAnimationFrame(() => {
+                    wrapper.style.maxHeight = "0px";
+                    detalle.classList.remove("faq-open");
+                });
+
+                setTimeout(() => {
+                    detalle.removeAttribute("open");
+                }, 450);
+            } else {
+                detalle.setAttribute("open", "");
+                detalle.classList.add("faq-open");
+
+                wrapper.style.maxHeight = "0px";
+
+                requestAnimationFrame(() => {
+                    wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                });
+            }
+        });
+    });
 </script>
 
 </body>

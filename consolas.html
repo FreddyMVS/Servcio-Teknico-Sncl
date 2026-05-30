@@ -5,36 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mantenimiento de consolas | FreddyFix</title>
     <meta name="description" content="Mantenimiento de consolas en San Clemente. Diagnóstico gratis y atención por WhatsApp.">
-    <link rel="stylesheet" href="/style.css?v=4">
+    <link rel="stylesheet" href="/style.css?v=6">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="manifest" href="/site.webmanifest">
+
+<style>
+/* =========================================================
+   FREDDYFIX - ANIMACIONES FORZADAS PARA PÁGINAS DE SERVICIO
+   ========================================================= */
+
+body.animaciones-listas .detail-wrapper {
+    animation: detalleCajaEntrada .75s cubic-bezier(.2,.8,.2,1) both;
+}
+
+body.animaciones-listas .detail-back,
+body.animaciones-listas .detail-wrapper h1,
+body.animaciones-listas .detail-intro,
+body.animaciones-listas .detail-image,
+body.animaciones-listas .servicio-adicional,
+body.animaciones-listas .detail-wrapper h2,
+body.animaciones-listas .price-badge,
+body.animaciones-listas .notice,
+body.animaciones-listas .detail-actions a {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: detalleSube .72s cubic-bezier(.2,.8,.2,1) both;
+}
+
+body.animaciones-listas .detail-back { animation-delay: .08s; }
+body.animaciones-listas .detail-wrapper h1 { animation-delay: .16s; }
+body.animaciones-listas .detail-intro { animation-delay: .26s; }
+body.animaciones-listas .detail-image { animation-delay: .36s; }
+body.animaciones-listas .servicio-adicional { animation-delay: .44s; }
+body.animaciones-listas .detail-wrapper h2 { animation-delay: .50s; }
+body.animaciones-listas .price-badge { animation-delay: .55s; }
+body.animaciones-listas .notice { animation-delay: .62s; }
+
+body.animaciones-listas .service-list li {
+    opacity: 0;
+    transform: translateX(-32px);
+    animation: detalleListaEntrada .6s cubic-bezier(.2,.8,.2,1) both;
+}
+
+body.animaciones-listas .service-list li:nth-child(1) { animation-delay: .60s; }
+body.animaciones-listas .service-list li:nth-child(2) { animation-delay: .75s; }
+body.animaciones-listas .service-list li:nth-child(3) { animation-delay: .90s; }
+body.animaciones-listas .service-list li:nth-child(4) { animation-delay: 1.05s; }
+body.animaciones-listas .service-list li:nth-child(5) { animation-delay: 1.20s; }
+body.animaciones-listas .service-list li:nth-child(6) { animation-delay: 1.35s; }
+
+body.animaciones-listas .detail-actions a:nth-child(1) { animation-delay: 1.35s; }
+body.animaciones-listas .detail-actions a:nth-child(2) { animation-delay: 1.48s; }
+
+@keyframes detalleCajaEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(26px) scale(.985);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes detalleSube {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes detalleListaEntrada {
+    from {
+        opacity: 0;
+        transform: translateX(-32px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media (hover: hover) {
+    .detail-image,
+    .service-list li,
+    .notice,
+    .price-badge,
+    .detail-actions a {
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, filter .25s ease !important;
+    }
+
+    .detail-image:hover {
+        transform: translateY(-5px) scale(1.025) !important;
+        filter: brightness(1.04);
+    }
+
+    .service-list li:hover {
+        transform: translateX(8px) !important;
+        border-color: var(--brand) !important;
+        box-shadow: 0 10px 24px rgba(31, 95, 158, .14) !important;
+    }
+
+    .notice:hover,
+    .price-badge:hover {
+        transform: translateY(-4px) scale(1.01) !important;
+    }
+
+    .detail-actions a:hover {
+        transform: translateY(-3px) scale(1.03) !important;
+    }
+}
+
+@media (hover: none) {
+    body.animaciones-listas .detail-wrapper {
+        animation: detalleCajaEntrada .75s cubic-bezier(.2,.8,.2,1) both, detalleFlotaMovil 7s ease-in-out 2s infinite;
+    }
+
+    .service-list li:active,
+    .notice:active,
+    .price-badge:active,
+    .detail-actions a:active {
+        transform: scale(.97) !important;
+        transition: transform .12s ease !important;
+    }
+}
+
+@keyframes detalleFlotaMovil {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-4px) scale(1.002); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.animaciones-listas .detail-wrapper,
+    body.animaciones-listas .detail-back,
+    body.animaciones-listas .detail-wrapper h1,
+    body.animaciones-listas .detail-intro,
+    body.animaciones-listas .detail-image,
+    body.animaciones-listas .servicio-adicional,
+    body.animaciones-listas .detail-wrapper h2,
+    body.animaciones-listas .service-list li,
+    body.animaciones-listas .price-badge,
+    body.animaciones-listas .notice,
+    body.animaciones-listas .detail-actions a {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+</style>
+
 </head>
 <body>
     <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar modo">
         🌙
     </button>
-
-    <script>
-        if (location.hostname === "freddyfix.cl") {
-            location.replace("https://www.freddyfix.cl" + location.pathname + location.search + location.hash);
-        }
-
-        const themeToggle = document.getElementById("theme-toggle");
-        const savedTheme = localStorage.getItem("freddyfix-theme");
-
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark-mode");
-            themeToggle.textContent = "☀️";
-        }
-
-        themeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-
-            const isDark = document.body.classList.contains("dark-mode");
-
-            localStorage.setItem("freddyfix-theme", isDark ? "dark" : "light");
-            themeToggle.textContent = isDark ? "☀️" : "🌙";
-        });
-    </script>
 <main class="detail-wrapper">
     <a href="/index.html#servicios" class="detail-back">← Volver a servicios</a>
 
@@ -49,7 +178,7 @@
             <li><strong>Nintendo:</strong> DS, 3DS y Wii.</li>
         </ul>
     </div>
-</section>
+
     <h2>¿Qué incluye?</h2>
     <ul class="service-list">
         <li><strong>Limpieza interna:</strong> retiro de polvo en ventilador, disipador y zonas de ventilación.</li>
@@ -76,5 +205,85 @@
 </main>
 
 <a class="whatsapp-float" href="https://wa.me/56956856850?text=Hola%20Freddy%2C%20me%20interesa%20consultar%20por%20mantenimiento%20de%20consola." target="_blank" rel="noopener">📱 WhatsApp</a>
+
+<script>
+    // Redirección con www
+    if (location.hostname === "freddyfix.cl") {
+        location.replace("https://www.freddyfix.cl" + location.pathname + location.search + location.hash);
+    }
+
+    // Aplicar modo oscuro guardado
+    const themeToggle = document.getElementById("theme-toggle");
+
+    if (localStorage.getItem("freddyfix-theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        if (themeToggle) themeToggle.textContent = "☀️";
+    }
+
+    // Botón modo oscuro con onda
+    if (themeToggle) {
+        themeToggle.addEventListener("click", (e) => {
+            const goingToDark = !document.body.classList.contains("dark-mode");
+
+            if (!document.startViewTransition) {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("freddyfix-theme", goingToDark ? "dark" : "light");
+                themeToggle.textContent = goingToDark ? "☀️" : "🌙";
+                return;
+            }
+
+            const x = e.clientX || innerWidth / 2;
+            const y = e.clientY || innerHeight / 2;
+            const endRadius = Math.hypot(
+                Math.max(x, innerWidth - x),
+                Math.max(y, innerHeight - y)
+            );
+
+            if (!goingToDark) {
+                document.documentElement.classList.add("return-light");
+            }
+
+            const transition = document.startViewTransition(() => {
+                document.body.classList.toggle("dark-mode");
+                localStorage.setItem("freddyfix-theme", goingToDark ? "dark" : "light");
+                themeToggle.textContent = goingToDark ? "☀️" : "🌙";
+            });
+
+            transition.ready.then(() => {
+                const clipPath = [
+                    `circle(0px at ${x}px ${y}px)`,
+                    `circle(${endRadius}px at ${x}px ${y}px)`
+                ];
+
+                document.documentElement.animate(
+                    { clipPath: goingToDark ? clipPath : [...clipPath].reverse() },
+                    {
+                        duration: 600,
+                        easing: "ease-in-out",
+                        pseudoElement: goingToDark
+                            ? "::view-transition-new(root)"
+                            : "::view-transition-old(root)"
+                    }
+                );
+            });
+
+            transition.finished.then(() => {
+                document.documentElement.classList.remove("return-light");
+            });
+        });
+    }
+
+    // Activar animaciones de la página
+    function activarAnimacionesServicio() {
+        document.body.classList.add("animaciones-listas");
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", activarAnimacionesServicio);
+    } else {
+        activarAnimacionesServicio();
+    }
+</script>
+
 </body>
 </html>
