@@ -1529,45 +1529,218 @@ body.dark-mode .ig-avatar {
     letter-spacing: 0.01em;
     box-shadow: 0 10px 22px rgba(225, 48, 108, 0.22);
 }
-/* Centrar botón Seguir en la tarjeta de Instagram del hero */
-.hero-instagram-card .ig-profile {
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-        "foto texto"
-        "boton boton";
-}
+/* =========================================================
+   MOVIMIENTO SUAVE GLOBAL - PC Y CELULAR
+   ========================================================= */
 
-.hero-instagram-card .ig-avatar-ring {
-    grid-area: foto;
-}
-
-.hero-instagram-card .ig-info {
-    grid-area: texto;
-}
-
-.hero-instagram-card .hero-instagram-btn,
-.hero-instagram-card .instagram-btn {
-    grid-area: boton;
-    justify-self: center;
-    margin-top: 24px;
-    min-width: 120px;
-}
-/* Centrar botón Seguir en la tarjeta de Instagram del hero en celular*/
-@media (max-width: 720px) {
-    .hero-instagram-card .ig-profile {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "foto"
-            "texto"
-            "boton";
-        justify-items: center;
-        text-align: center;
+@keyframes freddySoftFloat {
+    0%, 100% {
+        transform: translateY(0);
     }
 
-    .hero-instagram-card .hero-instagram-btn,
-    .hero-instagram-card .instagram-btn {
-        width: fit-content;
-        min-width: 130px;
-        justify-self: center;
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes freddySoftFloatSmall {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-4px) scale(1.005);
+    }
+}
+
+/* Cómo funciona */
+.step.show {
+    animation: freddySoftFloat 5.5s ease-in-out infinite;
+}
+
+.step.show:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.step.show:nth-child(2) {
+    animation-delay: .7s;
+}
+
+.step.show:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+.step.show:nth-child(4) {
+    animation-delay: 2.1s;
+}
+
+/* Información importante */
+.info-box.info-visible,
+.info-box.show {
+    animation: freddySoftFloatSmall 6s ease-in-out infinite;
+}
+
+/* Tarjetas de servicios con imágenes */
+.card.show {
+    animation: freddySoftFloatSmall 6.5s ease-in-out infinite;
+}
+
+.card.show:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.card.show:nth-child(2) {
+    animation-delay: .8s;
+}
+
+.card.show:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+.card.show:nth-child(4) {
+    animation-delay: 2.4s;
+}
+
+/* Imagen del hero / tarjeta Instagram */
+.hero-card,
+.hero-instagram-card {
+    animation: freddySoftFloatSmall 6.5s ease-in-out infinite;
+}
+
+/* Imágenes dentro de tarjetas */
+.card.show img,
+.hero-card img,
+.detail-image,
+.trabajo-imagen-slider {
+    transition:
+        transform .35s ease,
+        filter .35s ease;
+}
+
+/* Imágenes de trabajos/reseñas */
+.trabajo-resena-card.show {
+    animation: freddySoftFloatSmall 7s ease-in-out infinite;
+}
+
+.trabajo-resena-card.show:nth-child(2) {
+    animation-delay: .8s;
+}
+
+.trabajo-resena-card.show:nth-child(3) {
+    animation-delay: 1.6s;
+}
+
+/* Páginas individuales de servicios */
+body.animaciones-listas .detail-wrapper {
+    animation:
+        detalleCajaEntrada .75s cubic-bezier(.2,.8,.2,1) both,
+        freddySoftFloatSmall 7s ease-in-out 1.2s infinite;
+}
+
+/* Hover en PC: pausa un poco el movimiento para que se sienta controlado */
+@media (hover: hover) {
+    .step.show:hover,
+    .info-box.info-visible:hover,
+    .info-box.show:hover,
+    .card.show:hover,
+    .hero-card:hover,
+    .hero-instagram-card:hover,
+    .trabajo-resena-card.show:hover,
+    body.animaciones-listas .detail-wrapper:hover {
+        animation-play-state: paused;
+    }
+
+    .card.show:hover,
+    .step.show:hover,
+    .trabajo-resena-card.show:hover,
+    .info-box.info-visible:hover,
+    .info-box.show:hover {
+        transform: translateY(-8px) scale(1.02);
+    }
+
+    .card.show:hover img,
+    .hero-card:hover img,
+    .hero-instagram-card:hover .ig-avatar-ring,
+    .trabajo-resena-card.show:hover .trabajo-imagen-slider,
+    .detail-image:hover {
+        transform: scale(1.04);
+        filter: brightness(1.05);
+    }
+}
+
+/* Tacto en celular */
+@media (hover: none) {
+    .step.show:active,
+    .info-box:active,
+    .card.show:active,
+    .hero-card:active,
+    .hero-instagram-card:active,
+    .trabajo-resena-card.show:active,
+    body.animaciones-listas .detail-wrapper:active {
+        transform: scale(.97) !important;
+        animation-play-state: paused;
+        transition: transform .12s ease !important;
+    }
+}
+
+/* Respeta usuarios con reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .step.show,
+    .info-box.info-visible,
+    .info-box.show,
+    .card.show,
+    .hero-card,
+    .hero-instagram-card,
+    .trabajo-resena-card.show,
+    body.animaciones-listas .detail-wrapper {
+        animation: none !important;
+    }
+}
+/* =========================================================
+   MOVIMIENTO SUAVE PARA BOTÓN Y SELLOS DEL HERO
+   ========================================================= */
+
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary {
+    animation: freddySoftFloatSmall 5.8s ease-in-out infinite;
+}
+
+.trust-list li {
+    animation: freddySoftFloatSmall 5.8s ease-in-out infinite;
+}
+
+.trust-list li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.trust-list li:nth-child(2) {
+    animation-delay: .45s;
+}
+
+.trust-list li:nth-child(3) {
+    animation-delay: .9s;
+}
+
+.trust-list li:nth-child(4) {
+    animation-delay: 1.35s;
+}
+
+@media (hover: hover) {
+    .hero-actions .btn-primary:hover,
+    .hero-actions .btn-secondary:hover,
+    .trust-list li:hover {
+        animation-play-state: paused;
+        transform: translateY(-5px) scale(1.04);
+        box-shadow: 0 14px 28px rgba(31, 95, 158, .16);
+    }
+}
+
+@media (hover: none) {
+    .hero-actions .btn-primary:active,
+    .hero-actions .btn-secondary:active,
+    .trust-list li:active {
+        animation-play-state: paused;
+        transform: scale(.96) !important;
+        transition: transform .12s ease !important;
     }
 }
