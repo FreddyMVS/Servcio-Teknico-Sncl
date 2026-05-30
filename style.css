@@ -1529,3 +1529,45 @@ body.dark-mode .ig-avatar {
     letter-spacing: 0.01em;
     box-shadow: 0 10px 22px rgba(225, 48, 108, 0.22);
 }
+/* Centrar botón Seguir en la tarjeta de Instagram del hero */
+.hero-instagram-card .ig-profile {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+        "foto texto"
+        "boton boton";
+}
+
+.hero-instagram-card .ig-avatar-ring {
+    grid-area: foto;
+}
+
+.hero-instagram-card .ig-info {
+    grid-area: texto;
+}
+
+.hero-instagram-card .hero-instagram-btn,
+.hero-instagram-card .instagram-btn {
+    grid-area: boton;
+    justify-self: center;
+    margin-top: 24px;
+    min-width: 120px;
+}
+/* Centrar botón Seguir en la tarjeta de Instagram del hero en celular*/
+@media (max-width: 720px) {
+    .hero-instagram-card .ig-profile {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "foto"
+            "texto"
+            "boton";
+        justify-items: center;
+        text-align: center;
+    }
+
+    .hero-instagram-card .hero-instagram-btn,
+    .hero-instagram-card .instagram-btn {
+        width: fit-content;
+        min-width: 130px;
+        justify-self: center;
+    }
+}
