@@ -1456,4 +1456,76 @@ body.pagina-trabajos .trabajos-resenas-grid {
 .ver-todos-trabajos .btn-secondary {
     background: var(--surface);
 }
+.ig-profile {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+}
 
+.ig-avatar-ring {
+    width: 96px;
+    height: 96px;
+    min-width: 96px;
+    min-height: 96px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    padding: 4px;
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(220, 39, 67, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.ig-profile:hover .ig-avatar-ring {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.ig-avatar {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 3px solid var(--surface);
+    overflow: hidden;
+    transition: border-color 0.4s ease;
+}
+
+body.dark-mode .ig-avatar {
+    border-color: #0f1b2d;
+}
+
+@media (max-width: 700px) {
+    .ig-profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .ig-avatar-ring {
+        width: 88px;
+        height: 88px;
+        min-width: 88px;
+        min-height: 88px;
+    }
+}
+.instagram-label {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-bottom: 8px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    color: white;
+    background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+    font-size: 1.05rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    box-shadow: 0 10px 22px rgba(225, 48, 108, 0.22);
+}
