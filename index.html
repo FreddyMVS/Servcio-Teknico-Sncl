@@ -24,7 +24,7 @@
     <link rel="apple-touch-icon" href="https://www.freddyfix.cl/favicon.png">
     <meta name="theme-color" content="#1f5f9e">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css?v=13">
 </head>
 
 <body>
@@ -181,6 +181,10 @@
     </div>
 
     <div id="trabajos-resenas-container" class="trabajos-resenas-grid"></div>
+
+    <div class="ver-todos-trabajos">
+        <a href="/trabajos.html" class="btn-secondary">Ver todos los trabajos realizados →</a>
+    </div>
 </section>
 
     <section class="section" id="preguntas">
@@ -236,8 +240,6 @@
             </a>
         </div>
     </section>
-</main>
-
 </main>
 
 <section class="instagram-banner">
@@ -459,5 +461,53 @@
     });
 </script>
 
+<script>
+    // FAQ con apertura/cierre fluido real
+    document.querySelectorAll(".faq details").forEach((detalle) => {
+        if (detalle.querySelector(".faq-content")) return;
+
+        const summary = detalle.querySelector("summary");
+        const contenidoOriginal = Array.from(detalle.children).filter(
+            (child) => child.tagName.toLowerCase() !== "summary"
+        );
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "faq-content";
+
+        contenidoOriginal.forEach((elemento) => {
+            wrapper.appendChild(elemento);
+        });
+
+        detalle.appendChild(wrapper);
+
+        summary.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const estaAbierto = detalle.classList.contains("faq-open");
+
+            if (estaAbierto) {
+                wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+
+                requestAnimationFrame(() => {
+                    wrapper.style.maxHeight = "0px";
+                    detalle.classList.remove("faq-open");
+                });
+
+                setTimeout(() => {
+                    detalle.removeAttribute("open");
+                }, 450);
+            } else {
+                detalle.setAttribute("open", "");
+                detalle.classList.add("faq-open");
+
+                wrapper.style.maxHeight = "0px";
+
+                requestAnimationFrame(() => {
+                    wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>

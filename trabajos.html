@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajos realizados | FreddyFix</title>
+    <meta name="description" content="Trabajos realizados por FreddyFix en San Clemente. Mantenciones, armado de PC, notebooks, consolas y reseñas de clientes.">
+
+    <link rel="stylesheet" href="/style.css?v=13">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+<body class="pagina-trabajos">
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Cambiar modo oscuro">
+        🌙
+    </button>
+
+    <main class="trabajos-page">
+        <section class="trabajos-hero">
+            <div class="container">
+                <a href="/index.html#trabajos-resenas" class="detail-back">← Volver al inicio</a>
+
+                <span class="trabajos-kicker">FreddyFix</span>
+                <h1>Trabajos realizados y reseñas</h1>
+                <p>
+                    Aquí puedes ver todos los equipos atendidos, con imágenes del proceso,
+                    descripción del trabajo realizado y comentarios de clientes.
+                </p>
+            </div>
+        </section>
+
+        <section class="trabajos-page-section">
+            <div class="container">
+                <div id="trabajos-resenas-container" class="trabajos-resenas-grid">
+                    <p class="sin-resenas">Cargando trabajos realizados...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>FreddyFix · Servicio técnico en San Clemente, Maule</p>
+    </footer>
+
+    <script src="/comentarios.js"></script>
+
+    <script>
+        if (location.hostname === "freddyfix.cl") {
+            location.replace("https://www.freddyfix.cl" + location.pathname + location.search + location.hash);
+        }
+
+        const themeToggle = document.getElementById("theme-toggle");
+        const savedTheme = localStorage.getItem("freddyfix-theme");
+
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+            if (themeToggle) themeToggle.textContent = "☀️";
+        }
+
+        if (themeToggle) {
+            themeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("dark-mode");
+                const isDark = document.body.classList.contains("dark-mode");
+                localStorage.setItem("freddyfix-theme", isDark ? "dark" : "light");
+                themeToggle.textContent = isDark ? "☀️" : "🌙";
+            });
+        }
+
+        const trabajosPageElements = document.querySelectorAll(
+            ".trabajos-hero .detail-back, .trabajos-kicker, .trabajos-hero h1, .trabajos-hero p, .trabajos-page-section"
+        );
+
+        trabajosPageElements.forEach((elemento, index) => {
+            elemento.classList.add("fade-up");
+            elemento.style.transitionDelay = `${index * 120}ms`;
+        });
+
+        const observerTrabajos = new IntersectionObserver((entradas) => {
+            entradas.forEach((entrada) => {
+                if (entrada.isIntersecting) {
+                    entrada.target.classList.add("show");
+                    observerTrabajos.unobserve(entrada.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        trabajosPageElements.forEach((elemento) => {
+            observerTrabajos.observe(elemento);
+        });
+    </script>
+</body>
+</html>
